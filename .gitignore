@@ -2,4 +2,5 @@ build/
 project.egg-info/
 scrapinghub.yml
 __pycache__/
+spiders/__pycache__/
 *.pyc
