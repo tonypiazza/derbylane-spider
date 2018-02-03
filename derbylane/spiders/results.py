@@ -75,5 +75,5 @@ class ResultSpider(scrapy.Spider):
       self.log("Processed results for {0}".format(racedate))
 
    def parse_float(self, value):
-      result = value.replace("½", ".5").replace("¾", ".75").rstrip()
+      result = value.replace(u"½", ".5").replace(u"¾", ".75").rstrip()
       return float(result) if len(result) > 0 else 0.0
