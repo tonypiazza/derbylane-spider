@@ -66,7 +66,7 @@ class ResultSpider(scrapy.Spider):
                item['finish'] = line[35:36]
                item['behind'] = self.parse_float(line[37:39])
                item['time'] = self.parse_float(line[43:48])
-               item['odds'] = line[49:55].replace("*", "").rstrip()
+               item['odds'] = self.parse_float(line[49:55])
                if len(line) > 55:
                   item['comments'] = line[55:].rstrip()
                yield item
@@ -77,7 +77,7 @@ class ResultSpider(scrapy.Spider):
       self.log("Processed results for {0}".format(racedate))
 
    def parse_float(self, value):
-      result = value.replace(u"½", ".5").replace(u"¾", ".75").rstrip()
+      result = value.replace(u"½", ".5").replace(u"¾", ".75").replace("*", "").rstrip()
       if len(result) > 0:
          try:
             return float(result)
