@@ -2,5 +2,10 @@ build/
 project.egg-info/
 scrapinghub.yml
 __pycache__/
+bin/
+include/
+lib/
 derbylane/spiders/__pycache__/
+.Python
 *.pyc
+pip-selfcheck.json
