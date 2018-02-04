@@ -39,7 +39,7 @@ class ResultSpider(scrapy.Spider):
          parts = line[29:].split()
          if racedate is None:
             racedate_str = "{month} {day} {year}".format(month=parts[1], day=parts[2], year=parts[3])
-            racedate = datetime.strptime(racedate, "%b %d %Y").date()
+            racedate = datetime.strptime(racedate_str, "%b %d %Y").date()
             schedule = parts[4][:1]
          racenumber = int(parts[6])
          grade = parts[8]
@@ -78,4 +78,9 @@ class ResultSpider(scrapy.Spider):
 
    def parse_float(self, value):
       result = value.replace(u"½", ".5").replace(u"¾", ".75").rstrip()
-      return float(result) if len(result) > 0 else 0.0
+      if len(result) > 0:
+         try:
+            return float(result)
+         except ValueError:
+            return 0.0
+      return 0.0
