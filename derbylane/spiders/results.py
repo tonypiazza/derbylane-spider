@@ -38,7 +38,8 @@ class ResultSpider(scrapy.Spider):
 
          parts = line[29:].split()
          if racedate is None:
-            racedate = "{month} {day} {year}".format(month=parts[1], day=parts[2], year=parts[3])
+            racedate_str = "{month} {day} {year}".format(month=parts[1], day=parts[2], year=parts[3])
+            racedate = datetime.strptime(racedate, "%b %d %Y").date()
             schedule = parts[4][:1]
          racenumber = int(parts[6])
          grade = parts[8]
@@ -51,20 +52,21 @@ class ResultSpider(scrapy.Spider):
             if exp.match(line):
                item = ResultItem()
                item['track'] = "DerbyLane"
-               item['raceDate'] = datetime.strptime(racedate, "%b %d %Y").date()
+               item['raceDate'] = racedate
                item['schedule'] = schedule
                item['raceNumber'] = racenumber
                item['grade'] = grade
                item['distance'] = distance
                item['dogName'] = line[0:16].rstrip()
                item['weight'] = self.parse_float(line[17:20])
-               item['box'] = int(line[21:22])
-               item['start'] = int(line[23:24])
-               item['stretch'] = int(line[25:26])
-               item['turn'] = int(line[30:31])
-               item['finish'] = int(line[35:36])
+               item['box'] = line[21:22]
+               item['start'] = line[23:24]
+               item['stretch'] = line[25:26]
+               item['turn'] = line[30:31]
+               item['finish'] = line[35:36]
                item['behind'] = self.parse_float(line[37:39])
                item['time'] = self.parse_float(line[43:48])
+               item['odds'] = line[49:55].replace("*", "").rstrip()
                if len(line) > 55:
                   item['comments'] = line[55:].rstrip()
                yield item
