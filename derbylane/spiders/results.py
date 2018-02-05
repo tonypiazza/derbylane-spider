@@ -10,11 +10,28 @@ class ResultSpider(scrapy.Spider):
    allowed_domains = ['derbylane.com']
 
    def start_requests(self):
-      fetch_date = "{:%m-%d-%Y}".format(date.today() - timedelta(days=1))
       base_url = "http://www.derbylane.com/EntriesResult/SP{date}{schedule}RES.HTM"
+      repo = Repository()
+      today = date.today()
+      day = repo.get_last_result_date()
+      if day is None:
+         day = today - timedelta(days=30)
+      elif day < today:
+         day = day + timedelta(days=1)
+      else:
+         self.log("No results to download")
+         sys.exit(0)
+
       urls = []
-      urls.append(base_url.format(date=fetch_date, schedule='a'))
-      urls.append(base_url.format(date=fetch_date, schedule='e'))
+      while day < today:
+         day_of_week = day.weekday()
+         if day_of_week < 6:
+            fetch_date = "{:%m-%d-%Y}".format(day)
+            urls.append(base_url.format(date=fetch_date, schedule='a'))
+            if day_of_week > 0:
+               urls.append(base_url.format(date=fetch_date, schedule='e'))
+         day = day + timedelta(days=1)
+
       for url in urls:
          yield scrapy.Request(url=url, callback=self.parse)
 
