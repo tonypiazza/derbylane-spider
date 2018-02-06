@@ -15,15 +15,15 @@ class EntrySpider(scrapy.Spider):
       base_url = "http://www.derbylane.com/EntriesResult/SP{date}{schedule}ENT.HTM"
       repo = Repository(self.settings)
       today = date.today()
-      final_day = today + timedelta(days=1)
+      final_day = today + timedelta(days=3)
       day = repo.get_last_entry_date()
       if day is None:
          day = today - timedelta(days=1)
-      elif day < today:
+      elif day < final_day:
          day = day + timedelta(days=1)
       else:
          self.log("No entries to download")
-         sys.exit(0)
+         return
 
       urls = []
       while day < final_day:

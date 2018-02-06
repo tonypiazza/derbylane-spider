@@ -21,7 +21,7 @@ class ResultSpider(scrapy.Spider):
          day = day + timedelta(days=1)
       else:
          self.log("No results to download")
-         sys.exit(0)
+         return
 
       urls = []
       while day < today:
