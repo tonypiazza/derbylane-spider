@@ -9,3 +9,4 @@ derbylane/spiders/__pycache__/
 .Python
 *.pyc
 pip-selfcheck.json
+setup.py
