@@ -13,10 +13,16 @@ it more and more in recent years. I was quite happy to discover
 
 I was surprised how much simpler the Python version of this app turned
 out to be. That can be attributed to Python syntax being much simpler
-and the power of the Scraping framework.
+and the power of the Scrapy framework.
 
-Scraping data off the Derby Lane website is possible because they post 
-both PDF and TXT formats. The spiders in this project just use a known 
-URL pattern to extract raw data, parse it and then generate CSV format.
+Scraping off the Derby Lane website is possible because they post data
+in TEXT format. The spiders in this project just use a known 
+URL pattern to extract raw data, parse it and then insert it into a
+MySQL database.
+
+There are 2 spiders in this project: entries and results. There are
+also corresponding scrapy.Item subclasses defined for each type of
+data being scraped. A Pipeline has been defined that uses a Repository
+class to insert the data into the database.
 
 I welcome all comments and suggestions. Happy scraping!
