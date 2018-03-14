@@ -8,7 +8,7 @@ class Repository(object):
          user=settings.get('MYSQL_USER', 'root'),
          password=settings.get('MYSQL_USER', 'password'),
          host=settings.get('MYSQL_HOST', '127.0.0.1'),
-         database=settings.get('MYSQL_DATABASE', 'PapaJim')
+         database=settings.get('MYSQL_DATABASE', 'derbylane')
       )
       self.cur = self.con.cursor()
 
