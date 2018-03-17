@@ -27,17 +27,39 @@ following 2 tables:
 | .. image:: https://i.imgur.com/m75PZBY.png | .. image:: https://i.imgur.com/O26h0Co.png |
 +--------------------------------------------+--------------------------------------------+
 
-Use the mysql command-line tool to create the schema for this application:
+Installation
+############
+
+We assume you already have Python3 and MySQL installed and running. If not,
+you need to do that. To run this application, you need to do the following:
+
+1. Use the mysql command-line tool to create the schema for this application:
 
 .. code-block:: shell
 
-      mysql -u username -p password < schema.sql
+  mysql -u username -p password < schema.sql
 
 *Where username and password are the MySQL credentials to use when connecting*
+
+2. Use pip to install all of the dependencies for this project:
+
+.. code-block:: shell
+
+  pip install -r requirements.txt
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
 data being scraped. A Pipeline has been defined that uses an instance
 of the  Repository class to insert data into the database.
+
+Running the application
+#######################
+
+.. code-block:: shell
+
+  source bin/activate
+  scrapy crawl results
+  scrapy crawl entries
+  deactivate
 
 I welcome all comments and suggestions. Happy scraping!
