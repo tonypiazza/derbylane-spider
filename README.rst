@@ -17,12 +17,19 @@ and the power of the Scrapy framework.
 
 Scraping off the Derby Lane website is possible because they post data
 in TEXT format. The spiders in this project just use a known 
-URL pattern to extract raw data, parse it and then insert it into a
-MySQL database.
+URL pattern to extract raw data, parse it and then insert it into the
+appropriate table in a MySQL database. The schema consists of the
+following 2 tables:
+
+* DogEntry
+.. image:: https://imgur.com/m75PZBY
+
+* DogResult
+.. image:: https://imgur.com/7GnCymy
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
-data being scraped. A Pipeline has been defined that uses a Repository
-class to insert the data into the database.
+data being scraped. A Pipeline has been defined that uses an instance
+of the  Repository class to insert data into the database.
 
 I welcome all comments and suggestions. Happy scraping!
