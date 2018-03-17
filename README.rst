@@ -24,7 +24,7 @@ following 2 tables:
 +--------------------------------------------+--------------------------------------------+
 | DogEntry                                   | DogResult                                  |
 +--------------------------------------------+--------------------------------------------+
-| .. image:: https://i.imgur.com/m75PZBY.png | .. image:: https://i.imgur.com/m75PZBY.png |
+| .. image:: https://i.imgur.com/m75PZBY.png | .. image:: https://i.imgur.com/O26h0Co.png |
 +--------------------------------------------+--------------------------------------------+
 
 There are 2 spiders in this project: entries and results. There are
