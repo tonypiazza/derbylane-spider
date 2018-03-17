@@ -33,7 +33,7 @@ Use the mysql command-line tool to create the schema for this application:
 
       mysql -u username -p password < schema.sql
 
-* Where username and password are the MySQL credentials to use when connecting
+*Where username and password are the MySQL credentials to use when connecting*
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
