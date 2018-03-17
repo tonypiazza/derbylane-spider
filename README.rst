@@ -34,7 +34,7 @@ We assume you already have Python3 and MySQL installed and running. If not,
 you need to do that. To setup the environment for this application, you need 
 to do the following:
 
-1. Use the mysql command-line tool to create the schema for this application:
+1. Use the mysql command-line tool to create the schema:
 
 .. code-block:: shell
 
@@ -42,7 +42,7 @@ to do the following:
 
 *Where username and password are the MySQL credentials to use when connecting*
 
-2. Use pip to install all of the dependencies for this project:
+2. Use pip to install all of the dependencies:
 
 .. code-block:: shell
 
