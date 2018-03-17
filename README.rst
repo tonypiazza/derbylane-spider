@@ -27,11 +27,12 @@ following 2 tables:
 | .. image:: https://i.imgur.com/m75PZBY.png | .. image:: https://i.imgur.com/O26h0Co.png |
 +--------------------------------------------+--------------------------------------------+
 
-Installation
-############
+Setup the environment
+#####################
 
 We assume you already have Python3 and MySQL installed and running. If not,
-you need to do that. To run this application, you need to do the following:
+you need to do that. To setup the environment for this application, you need 
+to do the following:
 
 1. Use the mysql command-line tool to create the schema for this application:
 
