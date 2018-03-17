@@ -27,11 +27,13 @@ following 2 tables:
 | .. image:: https://i.imgur.com/m75PZBY.png | .. image:: https://i.imgur.com/O26h0Co.png |
 +--------------------------------------------+--------------------------------------------+
 
-| Use the mysql command-line tool to create the schema for this application:
-|
-|    mysql -u username -p password < schema.sql
-|
-|    * Where username and password are the MySQL credentials to use when connecting
+Use the mysql command-line tool to create the schema for this application:
+
+.. code-block:: shell
+
+      mysql -u username -p password < schema.sql
+
+* Where username and password are the MySQL credentials to use when connecting
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
