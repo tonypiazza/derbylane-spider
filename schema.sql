@@ -37,5 +37,6 @@ CREATE TABLE `dogresult` (
   `track` varchar(255) DEFAULT NULL,
   `turn` int(11) DEFAULT NULL,
   `weight` double DEFAULT NULL,
+  `odds` double DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
