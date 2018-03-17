@@ -22,10 +22,10 @@ appropriate table in a MySQL database. The schema consists of the
 following 2 tables:
 
 * DogEntry
-.. image:: https://imgur.com/m75PZBY
+  .. image:: https://i.imgur.com/m75PZBY.png
 
 * DogResult
-.. image:: https://imgur.com/7GnCymy
+  .. image:: https://i.imgur.com/m75PZBY.png
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
