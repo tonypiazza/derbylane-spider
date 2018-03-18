@@ -23,6 +23,8 @@ CREATE TABLE DogEntry (
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE INDEX DogEntryRaceDate ON DogEntry (raceDate);
+
 CREATE TABLE DogResult (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   behind double DEFAULT NULL,
@@ -44,3 +46,5 @@ CREATE TABLE DogResult (
   odds double DEFAULT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE INDEX DogResultRaceDate ON DogResult (raceDate);
