@@ -6,7 +6,7 @@ class Repository(object):
    def __init__(self, settings):
       self.con = connector.connect(
          user=settings.get('MYSQL_USER', 'root'),
-         password=settings.get('MYSQL_USER', 'password'),
+         password=settings.get('MYSQL_PASSWORD', 'password'),
          host=settings.get('MYSQL_HOST', '127.0.0.1'),
          database=settings.get('MYSQL_DATABASE', 'derbylane')
       )
