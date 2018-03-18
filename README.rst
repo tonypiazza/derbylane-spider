@@ -50,10 +50,10 @@ the environment by following these steps:
 
 3. Modify derbylane/settings.py to specify your MySQL connection details:
 
-  MYSQL_USER = root
-  MYSQL_PASSWORD = password
-  MYSQL_HOST = localhost
-  MYSQL_DATABASE = derbylane
+  MYSQL_USER = 'root'
+  MYSQL_PASSWORD = 'password'
+  MYSQL_HOST = 'localhost'
+  MYSQL_DATABASE = 'derbylane'
 
 *uncomment only the ones you want to modify*
 

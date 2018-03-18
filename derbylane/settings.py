@@ -90,8 +90,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # Local values for connecting to MYSQL
-#MYSQL_USER = ?
-#MYSQL_PASSWORD = ?
-#MYSQL_DATABASE = ?
-#MYSQL_HOST = ?
-#MYSQL_DATABASE = ?
+#MYSQL_USER = 'root'
+#MYSQL_PASSWORD = 'password'
+#MYSQL_HOST = 'localhost'
+#MYSQL_DATABASE = 'derbylane'
