@@ -30,9 +30,9 @@ following 2 tables:
 Setup the environment
 #####################
 
-We assume you already have Python3 and MySQL installed and running. If not,
-you need to do that. To setup the environment for this application, you need 
-to do the following:
+We assume you already have installed Python3, PIP and MySQL. If not, you need to do that. 
+After that, be sure to start the MySQL server on your machine. Now you are ready to setup 
+the environment by following these steps:
 
 1. Use the mysql command-line tool to create the schema:
 
@@ -40,13 +40,22 @@ to do the following:
 
   mysql -u username -p password < schema.sql
 
-*Where username and password are the MySQL credentials to use when connecting*
+*where username and password are the MySQL credentials to use when connecting*
 
 2. Use pip to install all of the dependencies:
 
 .. code-block:: shell
 
   pip install -r requirements.txt
+
+3. Modify derbylane/settings.py to specify your MySQL connection details:
+
+  MYSQL_USER = root
+  MYSQL_PASSWORD = password
+  MYSQL_HOST = localhost
+  MYSQL_DATABASE = derbylane
+
+*uncomment only the ones you want to modify*
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
