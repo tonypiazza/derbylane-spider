@@ -50,12 +50,14 @@ the environment by following these steps:
 
 3. Modify derbylane/settings.py to specify your MySQL connection details:
 
+.. code-block:: python
+
   MYSQL_USER = 'root'
   MYSQL_PASSWORD = 'password'
   MYSQL_HOST = 'localhost'
   MYSQL_DATABASE = 'derbylane'
 
-*uncomment only the ones you want to modify*
+*uncomment only the ones you need to modify*
 
 There are 2 spiders in this project: entries and results. There are
 also corresponding scrapy.Item subclasses defined for each type of
