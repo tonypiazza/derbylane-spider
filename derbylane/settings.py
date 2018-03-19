@@ -93,4 +93,4 @@ ITEM_PIPELINES = {
 #MYSQL_USER = 'root'
 #MYSQL_PASSWORD = 'password'
 #MYSQL_HOST = 'localhost'
-MYSQL_DATABASE = 'papajim'
+#MYSQL_DATABASE = 'derbylane'
