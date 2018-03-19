@@ -27,6 +27,10 @@ following 2 tables:
 | .. image:: https://i.imgur.com/m75PZBY.png | .. image:: https://i.imgur.com/O26h0Co.png |
 +--------------------------------------------+--------------------------------------------+
 
+There are 2 spiders in this project: entries and results. There are also corresponding 
+scrapy.Item subclasses defined for each type of data being scraped. A Pipeline has been 
+defined that uses an instance of the Repository class to insert data into the database.
+
 Setup the environment
 #####################
 
@@ -58,11 +62,6 @@ the environment by following these steps:
   MYSQL_DATABASE = 'derbylane'
 
 *uncomment only the ones you need to modify*
-
-There are 2 spiders in this project: entries and results. There are
-also corresponding scrapy.Item subclasses defined for each type of
-data being scraped. A Pipeline has been defined that uses an instance
-of the  Repository class to insert data into the database.
 
 Running the application
 #######################
