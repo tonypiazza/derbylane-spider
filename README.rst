@@ -47,7 +47,8 @@ the environment by following these steps:
 *where username and password are the MySQL credentials to use when connecting*
 
 2. For those running on Windows, you will need to install the 
-   `Build Tools for Visual Studio<https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15>`
+   `Build Tools for Visual Studio <https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15>`.
+
 
 3. Use pip to install all of the dependencies:
 
