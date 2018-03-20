@@ -49,6 +49,7 @@ the environment by following these steps:
 2. For those running on Windows, you will need to install the `Build Tools for Visual Studio 
    <https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15>`_.
 
+
 3. Use pip to install all of the dependencies:
 
 .. code-block:: shell
