@@ -71,11 +71,13 @@ the environment by following these steps:
 Running the application
 #######################
 
+From the project folder, you can execute Scrapy as follows:
+
 .. code-block:: shell
 
-  source bin/activate
+  source bin/activate		# Linux/Mac only
   scrapy crawl results
   scrapy crawl entries
-  deactivate
+  deactivate			# Linux/Mac only
 
 I welcome all comments and suggestions. Happy scraping!
