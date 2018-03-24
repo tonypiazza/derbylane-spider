@@ -4,18 +4,19 @@ from mysql import connector
 
 class Repository(object):
    def __init__(self, settings):
-      self.con = connector.connect(
+      self.connection = connector.connect(
          user=settings.get('MYSQL_USER', 'root'),
          password=settings.get('MYSQL_PASSWORD', 'password'),
          host=settings.get('MYSQL_HOST', '127.0.0.1'),
          database=settings.get('MYSQL_DATABASE', 'derbylane')
       )
-      self.cur = self.con.cursor()
+      self.insert_cursor = self.connection.cursor(prepared=True)
 
    def get_last_result_date(self):
+      cursor = self.connection.cursor()
       sql = "SELECT MAX(raceDate) FROM dogresult"
-      self.cur.execute(sql)
-      value = self.cur.fetchone()[0]
+      cursor.execute(sql)
+      value = cursor.fetchone()[0]
       return value if value is None else value.date()
 
    def insert_result_item(self, item):
@@ -37,32 +38,16 @@ class Repository(object):
                      track,
                      turn,
                      weight
-                  ) VALUES (
-                     %(behind)s, 
-                     %(box)s, 
-                     %(comments)s, 
-                     %(distance)s, 
-                     %(dogName)s, 
-                     %(finish)s, 
-                     %(grade)s, 
-                     %(odds)s, 
-                     %(raceDate)s, 
-                     %(raceNumber)s,
-                     %(schedule)s,
-                     %(start)s,
-                     %(stretch)s,
-                     %(time)s,
-                     %(track)s,
-                     %(turn)s,
-                     %(weight)s
-                  )
+                  ) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+                             %s, %s, %s, %s, %s, %s, %s, %s )
             """
-      self.cur.execute(sql, dict(item))
+      self.insert_cursor.execute(sql, [item[key] for key in sorted(item)])
 
    def get_last_entry_date(self):
+      cursor = self.connection.cursor()
       sql = "SELECT MAX(raceDate) FROM dogentry"
-      self.cur.execute(sql)
-      value = self.cur.fetchone()[0]
+      cursor.execute(sql)
+      value = cursor.fetchone()[0]
       return value if value is None else value.date()
 
    def insert_entry_item(self, item):
@@ -77,21 +62,10 @@ class Repository(object):
                      raceNumber, 
                      schedule, 
                      track
-                  ) VALUES (
-                     %(birthDate)s, 
-                     %(box)s, 
-                     %(distance)s, 
-                     %(dogName)s, 
-                     %(gender)s, 
-                     %(grade)s, 
-                     %(raceDate)s, 
-                     %(raceNumber)s, 
-                     %(schedule)s, 
-                     %(track)s
-                  )
+                  ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-      self.cur.execute(sql, dict(item))
+      self.insert_cursor.execute(sql, [item[key] for key in sorted(item)])
 
    def commit_changes(self):
-      self.con.commit()
-      self.con.close()
+      self.connection.commit()
+      self.connection.close()
