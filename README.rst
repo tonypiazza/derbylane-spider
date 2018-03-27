@@ -1,6 +1,10 @@
 Using Scrapy to extract dog racing data
 =======================================
 
+.. image:: https://i.imgur.com/s2VPPoT.png
+   :align: right
+   :scale: 50 %
+
 This project contains 2 spiders that can be used to extract entries 
 and results data from the `Derby Lane website <http://www.derbylane.com/>`_.
 
