@@ -14,11 +14,11 @@ There are 2 spiders in this project: entries and results. There are also corresp
 
 The schema consists of the following 2 tables:
 
-DogEntry  | DogResult
-------------- | -------------
+DogEntry | DogResult
+-------- | ---------
 <img align="top" src="https://i.imgur.com/m75PZBY.png">  | <img  src="https://i.imgur.com/O26h0Co.png">
 
-The SQL statements needed to create the schema for this application can be found in the file schema.sql in the root project folder.
+There is also an index for each of the above tables on the raceDate column.
 
 ## Setup the environment
 
