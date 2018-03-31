@@ -75,9 +75,7 @@ From the project folder, you can execute Scrapy as follows:
 
 .. code-block:: shell
 
-  source bin/activate		# Linux/Mac only
   scrapy crawl results
   scrapy crawl entries
-  deactivate			# Linux/Mac only
 
 I welcome all comments and suggestions. Happy scraping!
