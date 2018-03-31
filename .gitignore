@@ -11,3 +11,4 @@ derbylane/spiders/__pycache__/
 pip-selfcheck.json
 setup.py
 .idea/
+derbylane/settings.py
